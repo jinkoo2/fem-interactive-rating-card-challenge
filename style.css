@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root{
+    /* # Front-end Style Guide */
+
+    /* ## Layout */
+    
+    /* The designs were created to the following widths: */
+    
+    --mobile: 375px;
+    --desktop: 1440px;
+    
+    /* ## Colors */
+    
+    /* ### Primary */
+    
+    --primary-orange: hsl(25, 97%, 53%);
+    
+    /* ### Neutral */
+    
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-light-grey: hsl(217, 12%, 63%);
+    --neutral-medium-grey: hsl(216, 12%, 54%);
+    --neutral-dark-blue: hsl(213, 19%, 18%);
+    --neutral-very-dark-blue: hsl(216, 12%, 8%);
+    
+    --circle-bg: hsla(216, 12%, 54%, 0.3);
+    /* ## Typography */
+    
+    /* ### Body Copy */
+    
+    --font-size: 15px;
+    
+    /* ### Font */
+    
+    /* - Family: [Overpass](https://fonts.google.com/specimen/Overpass) */
+    /* - Weights: 400, 700 */
+
+    --card-size: 500px;
+    --title-font-size: 2rem;
+    --p-font-size: 1.2rem;
+    --p-line-height: 2rem;
+    --circle-size: 4rem;
+    --circle-gap: 1rem;
+    --card-padding: 2rem;
+    --thankyou-result-line-padding: 1rem 2rem;
+
+    --submit-button-padding: 1rem 2rem;
+    --submit-button-font-size: 1rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: var(--font-size);
+    font-family: 'Overpass', sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--neutral-very-dark-blue);
+    color: var(--neutral-white)
+}
+
+main{
+    width: var(--card-size);
+    height: var(--card-size);    
+    overflow: hidden;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    background-color: var(--neutral-dark-blue);
+    border-radius: 2rem;
+    border:none;
+    padding: var(--card-padding)
+}
+
+.rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    /* display: none; */
+}
+
+.thankyou{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.thankyou img{
+    width:50%;
+}
+
+.thankyou .result{
+    background-color: var(--circle-bg);
+    padding: var(--thankyou-result-line-padding);
+    border-radius: 2rem;
+    color: var(--primary-orange);
+    font-weight: 700;
+}
+
+.thankyou h2{
+    font-weight: 700;
+    font-size: var(--title-font-size);
+}
+
+.rating h1{
+    font-weight: 700;
+    font-size: var(--title-font-size);
+}
+
+.rating p, .thankyou p{
+    font-size: var(--p-font-size);
+    line-height: var(--p-line-height);
+    color: var(--neutral-light-grey);
+}
+
+.thankyou p{
+    text-align: center;
+}
+
+
+.rating_buttons{
+    display: flex;
+    gap: var(--circle-gap);
+    align-self: center;
+}
+
+.circle{
+    width: var(--circle-size);
+    height: var(--circle-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--circle-bg);
+}
+
+button.circle{
+    cursor: pointer;
+    color: var(--neutral-white);
+    font-size: 1rem;
+}
+
+button.circle.selected{
+    background-color: var(--neutral-light-grey);
+}
+
+button.circle:hover{
+    background-color: var(--primary-orange);
+    font-weight: 700;
+}
+
+#submit{
+    align-self: center;
+    width:90%;
+    padding: var(--submit-button-padding);
+    background-color: var(--primary-orange);
+    border-radius: 2rem;
+    color: var(--neutral-white);
+    font-size: var(--submit-button-font-size);
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+
+#submit:hover{
+    background-color: var(--neutral-white);
+    color: var(--primary-orange)
+}
+
+
+@media (max-width: 375px){
+    :root{
+        --card-size: 300px;
+        --title-font-size: 1.2rem;
+        --p-font-size: 0.8rem;
+        --p-line-height: 1.0rem;
+        --circle-size: 2rem;
+        --circle-gap: 0.7rem;
+        --card-padding: 1.5rem;
+
+        --submit-button-padding: 0.5rem;
+        --submit-button-font-size: 0.7rem;
+
+        --thankyou-result-line-padding: 0.5rem 1rem;
+    }
+}
